@@ -8,7 +8,6 @@ Introducing our Event Management System, a solution developed as part of SSDI gr
 * Schedule a Event.
 * View upcoming events.
 * View the event calendar.
-* Getting approval for the events.
 * Ticket Booking for the event.
 * QR Code generation for receiving tickets.
 
