@@ -25,7 +25,7 @@ app.use(
    })
 );
 
-mongoose.connect("mongodb+srv://schakali:capshiv@clusters.9bfff.mongodb.net/?retryWrites=true&w=majority&appName=ClusterS");
+mongoose.connect("mongodb+srv://schakali:capshiv@bme-cluster.eyro2.mongodb.net/?retryWrites=true&w=majority&appName=BME-cluster");
 
 const storage = multer.diskStorage({
    destination: (req, file, cb) => {

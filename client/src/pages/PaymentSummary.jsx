@@ -169,35 +169,7 @@ if (redirect){
           </div>
       <div className="ml-12 bg-gray-100 shadow-lg mt-8 p-16 w-3/5 float-left">
           {/* Your Details */}
-          <div className="mt-8 space-y-4">
-            <h2 className="text-xl font-bold mb-4">Your Details</h2>
-            <input
-              type="text"
-              name="name"
-              value={details.name}
-              onChange={handleChangeDetails}
-              placeholder="Name"
-              className="input-field ml-10 w-80 h-10 bg-gray-50 border border-gray-30  rounded-md p-2.5"
-            />
-            <input
-              type="email"
-              name="email"
-              value={details.email}
-              onChange={handleChangeDetails}
-              placeholder="Email"
-              className="input-field w-80 ml-3 h-10 bg-gray-50 border border-gray-30  rounded-sm p-2.5"
-            />
-            <div className="flex space-x-4">
-            <input
-              type="tel"
-              name="contactNo"
-              value={details.contactNo}
-              onChange={handleChangeDetails}
-              placeholder="Contact No"
-              className="input-field ml-10 w-80 h-10 bg-gray-50 border border-gray-30 rounded-sm p-2.5"
-            />
-            </div>
-          </div>
+          
   
           {/* Payment Option */}
      
@@ -246,7 +218,7 @@ if (redirect){
               />
             </div>
             <div className="float-right">
-            <p className="text-sm font-semibold pb-2 pt-8">Total : LKR. {event.ticketPrice}</p>
+            <p className="text-sm font-semibold pb-2 pt-8">Total : USD. {event.ticketPrice}</p>
             <Link to={'/'}>
               <button type="button" 
                 onClick = {createTicket}
@@ -270,7 +242,7 @@ if (redirect){
             <p className="text-xs">{event.eventDate.split("T")[0]},</p>
             <p className="text-xs pb-2"> {event.eventTime}</p>
             <hr className=" my-2 border-t pt-2 border-gray-400" />
-            <p className="float-right font-bold">LKR. {event.ticketPrice}</p>
+            <p className="float-right font-bold">USD. {event.ticketPrice}</p>
             <p className="font-bold">Sub total: {event.ticketPrice}</p>
           </div>
           

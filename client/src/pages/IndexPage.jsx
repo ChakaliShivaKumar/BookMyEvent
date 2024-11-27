@@ -15,7 +15,11 @@ import ImageSlider from "./ImageSlider";
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentEvents = events.filter((event) =>
-    event.title.toLowerCase().includes(params.searchQuery.toLowerCase())
+    event.title.toLowerCase().includes(params.searchQuery.toLowerCase()) || 
+    event.location.toLowerCase().includes(params.searchQuery.toLowerCase()) ||
+    event.description.toLowerCase().includes(params.searchQuery.toLowerCase()) ||
+    event.organizedBy.toLowerCase().includes(params.searchQuery.toLowerCase()) ||
+    event.type.toLowerCase().includes(params.searchQuery.toLowerCase())
   ).slice(startIndex, endIndex);
 
   // Calculate total pages
@@ -82,14 +86,14 @@ import ImageSlider from "./ImageSlider";
           if (eventDate > currentDate || eventDate.toDateString() === currentDate.toDateString()){
             return (
               <div className="bg-white rounded-xl relative" key={event._id}>
-              <div className="rounded-tl-[0.75rem] rounded-tr-[0.75rem] rounded-br-[0] rounded-bl-[0] object-fill aspect-16:9">
-                {event.image && (
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="rounded-tl-[0.75rem] rounded-tr-[0.75rem] rounded-br-[0] rounded-bl-[0] object-fill aspect-16:9"
-                  />
-                )}
+              <div className="rounded-tl-[0.75rem] rounded-tr-[0.75rem] rounded-br-[0] rounded-bl-[0] overflow-hidden">
+                  {event.image && (
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="w-full h-[200px] object-cover rounded-tl-[0.75rem] rounded-tr-[0.75rem]"
+                    />
+                  )}
                 <div className="absolute flex gap-4 bottom-[240px] right-8 md:bottom-[20px] md:right-3 lg:bottom-[250px] lg:right-4 sm:bottom-[260px] sm:right-3">
                   <button onClick={() => handleLike(event._id)}>
                     <BiLike className="w-auto h-12 lg:h-10 sm:h-12 md:h-10 bg-white p-2 rounded-full shadow-md transition-all hover:text-primary" />
@@ -117,9 +121,9 @@ import ImageSlider from "./ImageSlider";
                   </div>
                 </div>
 
-                <div className="text-xs flex flex-col flex-wrap truncate-text">
+                {/* <div className="text-xs flex flex-col flex-wrap truncate-text">
                   {event.description}
-                </div>
+                </div> */}
                 <div className="flex justify-between items-center my-2 mr-4">
                   <div className="text-sm text-primarydark ">
                     Organized By: <br />
@@ -134,7 +138,7 @@ import ImageSlider from "./ImageSlider";
                 </div>
                 <Link to={"/event/" + event._id} className="flex justify-center">
                   <button className="primary flex items-center gap-2">
-                    Book Ticket
+                    View
                     <BsArrowRightShort className="w-6 h-6" />
                   </button>
                 </Link>
