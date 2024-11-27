@@ -89,7 +89,7 @@ import ImageSlider from "./ImageSlider";
               <div className="rounded-tl-[0.75rem] rounded-tr-[0.75rem] rounded-br-[0] rounded-bl-[0] overflow-hidden">
                   {event.image && (
                     <img
-                      src={event.image}
+                      src={event.image?event.image:"https://img.freepik.com/free-photo/group-young-people-celebrating-conc…"}
                       alt={event.title}
                       className="w-full h-[200px] object-cover rounded-tl-[0.75rem] rounded-tr-[0.75rem]"
                     />
